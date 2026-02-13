@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "coincrawler",
+  "version": "${version}",
+  "name": "Coin Crawler",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/coincrawler/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.github.silver3.coincrawler.client.CoincrawlerDataGenerator"
+    ],
+    "client": [
+      "com.github.silver3.coincrawler.client.CoincrawlerClient"
+    ],
+    "main": [
+      "com.github.silver3.coincrawler.Coincrawler"
+    ]
+  },
+  "mixins": [
+    "coincrawler.mixins.json",
+    {
+      "config": "coincrawler.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
