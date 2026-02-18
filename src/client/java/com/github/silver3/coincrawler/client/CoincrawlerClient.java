@@ -5,7 +5,7 @@ import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallba
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.github.silver3.coincrawler.client.Commands.TestCommand;
+import com.github.silver3.coincrawler.client.Commands.*;
 
 public class CoincrawlerClient implements ClientModInitializer {
     public static final String MOD_ID = "coincrawler";
@@ -16,6 +16,7 @@ public class CoincrawlerClient implements ClientModInitializer {
         LOGGER.info("Initializing Coincrawler Client");
 
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
+            SetKeyCommand.register(dispatcher);
             TestCommand.register(dispatcher);
         });
     }
